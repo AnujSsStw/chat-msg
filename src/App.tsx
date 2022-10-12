@@ -116,15 +116,7 @@ const ChatRoom = () => {
   );
 };
 
-type msg = {
-  msg: {
-    text: string;
-    uid: string;
-    photoURL: string;
-  };
-};
-
-const Message = (props: msg) => {
+const Message = (props: any) => {
   const { photoURL, text, uid } = props.msg;
   const random = Math.round(Math.random() * 100);
 
