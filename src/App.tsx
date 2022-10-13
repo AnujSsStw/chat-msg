@@ -77,10 +77,10 @@ const SignIn = () => {
 const ChatRoom = () => {
   const [msg, setMsg] = useState("");
   const docRef = collection(db, "message");
-  // const q = query(docRef, orderBy("createdAt", "asc"), limit(25));
+  const q = query(docRef, orderBy("createdAt", "asc"), limit(500));
   const scroll = useRef<HTMLInputElement>(null);
 
-  const [messages] = useCollectionData();
+  const [messages] = useCollectionData(q);
 
   const msgSend = async (e: React.FormEvent) => {
     e.preventDefault();
